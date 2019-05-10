@@ -271,6 +271,10 @@ h2 {
   margin-left: 5px;
 }
 
+.heart {
+  display: inline-block;
+}
+
 .gallery {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -280,7 +284,7 @@ h2 {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 5% 0;
+  padding: 10% 0;
 }
 
 .imageContainer {
@@ -290,27 +294,48 @@ h2 {
   transition: all 0.2s ease-out;
   -webkit-box-shadow: 2px 2px 5px #999;
           box-shadow: 2px 2px 5px #999;
-  background: #f5cae0;
+  background: #f5cae0e8;
+  position: relative;
 }
 
 .imageContainer:nth-of-type(2n) {
-  background: #bddab6;
+  background: #bddab6ea;
   -webkit-transform: rotate(-5deg);
           transform: rotate(-5deg);
 }
 
 .imageContainer:nth-of-type(3n) {
-  background: #cbebf7;
-  -webkit-transform: rotate(2deg);
-          transform: rotate(2deg);
+  background: #cbebf7ea;
+  -webkit-transform: rotate(3deg);
+          transform: rotate(3deg);
+}
+
+.imageContainer:nth-child(1n + 5) {
+  margin-top: -100px;
+  z-index: 1;
 }
 
 .imageContainer:hover, .imageContainer:focus {
-  z-index: 1;
-  -webkit-animation: none;
-          animation: none;
+  z-index: 2;
   -webkit-transform: rotate(0) scale(1.3);
           transform: rotate(0) scale(1.3);
+}
+
+@media (max-width: 1223px) {
+  .imageContainer:nth-child(1n + 4) {
+    margin-top: -100px;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 611px) {
+  .imageContainer:nth-child(1n + 2) {
+    margin-top: -70px;
+    z-index: 1;
+  }
+  .imageContainer:nth-child(1n + 2):hover, .imageContainer:nth-child(1n + 2):focus {
+    z-index: 2;
+  }
 }
 
 .image {
